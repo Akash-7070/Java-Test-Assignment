@@ -1,0 +1,37 @@
+public class Solution
+{
+    public static int solution(int A[])
+    {
+        int countPaire=0;
+        final int maxNumberOfPairs=1000000000;
+        
+        for(int i=0; i<A.length; i++)
+        {
+            if(A[i]==0)
+            {
+                for(int j=i; j<A.length; j++)
+                {
+                    if(A[j]!=0)
+                    {
+                        countPaire++;
+                    }
+                }
+            }
+        }
+        
+        if(countPaire>maxNumberOfPairs)
+        {
+            return -1;
+        }
+        else
+        {
+            return countPaire;
+        }
+    }
+    
+    public static void main(String args[])
+    {
+      int A[]={0,1,0,1,1};
+      System.out.println("Number of pairs will be- "+solution(A));
+    }
+}
